@@ -51,9 +51,6 @@ export default class DirpeopleWebPart extends BaseClientSideWebPart<IPeopleDirec
 
 
 
-//Testing 2
-//Testing 3
-//Testing 4
 
 
 /*import * as React from 'react';
