@@ -7,6 +7,7 @@ define([], function() {
     "Error": "Error",
     "SkillsLabel": "Skills",
     "ProjectsLabel": "Projects",
+    "ManagerLabel": "Organisation Chart",
     "CopyEmailLabel": "Copy email to clipboard",
     "CopyPhoneLabel": "Copy phone to clipboard",
     "CopyMobileLabel": "Copy mobile to clipboard",
