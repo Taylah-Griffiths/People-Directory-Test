@@ -57,15 +57,21 @@ export class PeopleCallout extends React.Component<IPeopleCalloutProps, IPeopleC
                 {this.props.person.office}
             </li>
           }
+          {this.props.person.manager &&
+            <li id="personcopyoffice">
+              <i className="ms-Icon ms-Icon--Contact icon" aria-hidden="true"></i>
+                {this.props.person.manager}
+            </li>
+          }
           {<li id="Delve">
               <i className="ms-Icon ms-Icon--Contact icon" aria-hidden="true"></i>
                <a className="ms-Link" href={this.decodeUrl(this.props.person.email)} title="Link for delve">Delve</a>
           </li>}
-          {this.props.person.manager &&
+          {this.props.person.orgChart &&
             <li className={styles.info + ' ' + styles.fl_column}>
-              <label className="ms-fontSize-xl ms-fontWeight-light">{strings.ManagerLabel}</label>
+              <label className="ms-fontSize-xl ms-fontWeight-light">{strings.OrgChartLabel}</label>
               <i className="ms-Icon ms-Icon--Contact icon" aria-hidden="true"></i>
-              <a className="ms-Link" href={this.props.person.manager} title="Link for Org Chart">{this.props.person.firstName}'s Org Chart</a>
+              <a className="ms-Link" href={this.props.person.orgChart} title="Link for Org Chart">{this.props.person.firstName}'s Org Chart</a>
             </li>
           }
           {this.props.person.projects &&

@@ -100,7 +100,7 @@ export class PeopleDirectory extends React.Component<IPeopleDirectoryProps, IPeo
     // retrieve information about people using SharePoint People Search
     // sort results ascending by the last name
     this.props.spHttpClient
-      .get(`${this.props.webUrl}/_api/search/query?querytext='${query}'&selectproperties='FirstName,LastName,PreferredName,WorkEmail,PictureURL,WorkPhone,MobilePhone,JobTitle,Department,Skills,PastProjects,OfficeNumber,HierarchyUrl'&sortlist='LastName:ascending'&sourceid='b09a7990-05ea-4af9-81ef-edfab16c4e31'&rowlimit=500`, SPHttpClient.configurations.v1, {
+      .get(`${this.props.webUrl}/_api/search/query?querytext='${query}'&selectproperties='FirstName,LastName,PreferredName,WorkEmail,PictureURL,WorkPhone,MobilePhone,JobTitle,Department,Skills,PastProjects,OfficeNumber,HierarchyUrl,Manager'&sortlist='LastName:ascending'&sourceid='b09a7990-05ea-4af9-81ef-edfab16c4e31'&rowlimit=500`, SPHttpClient.configurations.v1, {
         headers: headers
       })
       .then((res: SPHttpClientResponse): Promise<IPeopleSearchResults> => {
@@ -141,7 +141,8 @@ export class PeopleDirectory extends React.Component<IPeopleDirectoryProps, IPeo
             skills: this._getValueFromSearchResult('Skills', r.Cells),
             projects: this._getValueFromSearchResult('PastProjects', r.Cells),
             office: this._getValueFromSearchResult('OfficeNumber', r.Cells),
-            manager: this._getValueFromSearchResult('HierarchyUrl', r.Cells)
+            orgChart: this._getValueFromSearchResult('HierarchyUrl', r.Cells),
+            manager:  this._getValueFromSearchResult('Manager', r.Cells)
           };
         });
 

@@ -12,5 +12,6 @@ export interface IPerson {
   projects: string;
   office: string;
   manager: string;
+  orgChart: string;
 }
 
