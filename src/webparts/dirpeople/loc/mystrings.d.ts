@@ -6,6 +6,7 @@ declare interface IPeopleDirectoryWebPartStrings {
   ErrorLabel: string;
   SkillsLabel: string;
   ProjectsLabel: string;
+  ManagerLabel: string;
   CopyEmailLabel: string;
   CopyPhoneLabel: string;
   CopyMobileLabel: string;

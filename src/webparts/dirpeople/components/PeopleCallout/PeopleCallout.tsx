@@ -61,6 +61,13 @@ export class PeopleCallout extends React.Component<IPeopleCalloutProps, IPeopleC
               <i className="ms-Icon ms-Icon--Contact icon" aria-hidden="true"></i>
                <a className="ms-Link" href={this.decodeUrl(this.props.person.email)} title="Link for delve">Delve</a>
           </li>}
+          {this.props.person.manager &&
+            <li className={styles.info + ' ' + styles.fl_column}>
+              <label className="ms-fontSize-xl ms-fontWeight-light">{strings.ManagerLabel}</label>
+              <i className="ms-Icon ms-Icon--Contact icon" aria-hidden="true"></i>
+              <a className="ms-Link" href={this.props.person.manager} title="Link for Org Chart">{this.props.person.firstName}'s Org Chart</a>
+            </li>
+          }
           {this.props.person.projects &&
             <li className={styles.info + ' ' + styles.fl_column}>
               <label className="ms-fontSize-xl ms-fontWeight-light">{strings.ProjectsLabel}</label>
@@ -74,12 +81,7 @@ export class PeopleCallout extends React.Component<IPeopleCalloutProps, IPeopleC
             </li>
           }
           
-          {this.props.person.manager &&
-            <li id="personcopyoffice">
-              <i className="ms-Icon ms-Icon--Contact icon" aria-hidden="true"></i>
-                {this.props.person.manager}
-            </li>
-          }
+          
           
         </ul>
       </div>
